@@ -22,14 +22,28 @@ class _MainAppState extends State<MainApp> {
          backgroundColor: const Color.fromARGB(255, 9, 49, 81),
         ),
         body: const Center(
-          child: Row(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              TimerButton(text: "Start"),
-              SizedBox(width: 10), 
-              TimerButton(text: "Stop"),
-              SizedBox(width: 10),
-              TimerButton(text: "Clear"),
+             TextField(
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                    hintText: "Bitte stelle Timer ein",
+                    ),
+                    textAlign: TextAlign.center,
+                ), 
+                SizedBox(height: 20),
+                Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TimerButton(text: "Start"),
+                  SizedBox(width: 10), 
+                  TimerButton(text: "Stop"),
+                  SizedBox(width: 10),
+                  TimerButton(text: "Clear"),
+                ],
+              ),
             ],
           ),
         ),
